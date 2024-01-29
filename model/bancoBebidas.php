@@ -1,9 +1,8 @@
 <?php 
 
 function inserirBebida($conexao, $nomeProduto, $valor, $descricao){
-    $query = "insert into bebidas(nomeProduto, valor, descricao) values('{$nomeProduto}' , '{$valor}' , '{$descricao}' ";
-    $result = mysqli_query($conexao, $query);
-    return $result;
+    $query = "insert into bebidas(nomeProduto, valor, descricao)values('{$nomeProduto}','{$valor}','{$descricao}')";
+    return mysqli_query($conexao, $query);
 }
 
 function deletarBebida($conexao, $idProduto){
@@ -19,13 +18,13 @@ function alterarBebida($conexao, $idProduto, $nomeProduto, $valor, $descricao){
 }
 
 function buscarNomeBebida($conexao, $nomeProduto){
-    $query = " select * from bebidas where noneProduto like '%{$nomeProduto}5'";
+    $query = " select * from bebidas where noneProduto like '%{$nomeProduto}%'";
     $result = mysqli_query($conexao, $query);
     return  $result;
 }
 
 function buscarIDBebida($conexao, $idProduto){
-    $query = " select * from bebidas where idProduto like '%{$idProduto}5'";
+    $query = " select * from bebidas where idProduto like '%{$idProduto}%'";
     $result = mysqli_query($conexao, $query);
     return $result;
 }
