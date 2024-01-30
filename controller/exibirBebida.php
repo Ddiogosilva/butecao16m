@@ -1,7 +1,7 @@
 <?php 
-include_once("../view/header.php");
+include_once("../tela/header.php");
 require_once("../model/conexao.php");
-require_once("../model/bancoBebidas");
+require_once("../model/bancoBebidas.php");
 
 extract($_REQUEST, EXTR_OVERWRITE);
 

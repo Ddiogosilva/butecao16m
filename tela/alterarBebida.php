@@ -15,32 +15,31 @@ include_once("../model/bancoBebidas.php");
  
  
  ?>
- 
-<div class="container">
-    <form class="row g-3" method = "Post" action= "../controller/alterarBebida.php">
- 
-    <div class="col-md-8">
-        <label for="inputNome" class="form-label">Nome</label>
-        <input type="text" class="form-control" value=" <?php echo($bebidas["nomeProduto"])?>" name="nomeProduto" id="inputNome">
-    </div>
 
-    <div class="col-md-4">
-        <label for="inputFone" class="form-label">Fone</label>
-        <input type="text" class="form-control" value=" <?php echo($bebidas["valor"])?>" name="valor" id="inputFone">
-    </div>
+    <div class="container">
+        <form class="row g-3" method = "Post" action= "../controller/alterarBebida.php">
+        <input type="hidden" value=" <?php echo($bebidas["idProduto"])?>" name="idProduto" id="inputNome">
 
-    <div class="col-md-8">
-        <label for="inputNome" class="form-label">Nome</label>
-        <input type="text" class="form-control" value=" <?php echo($bebidas["descricao"])?>" name="descricao" id="inputNome">
-    </div>
-   
-    
-   
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary"> Salvar</button>
-    </div>
-    </form>
-</div>    
+        <div class="col-md-8">
+            <label for="inputNome" class="form-label">Produto</label>
+            <input type="text" class="form-control" value=" <?php echo($bebidas["nomeProduto"])?>" name="nomeProduto" id="inputNome">
+        </div>
+        
+        <div class="col-md-4">
+            <label for="inputFone" class="form-label">valor</label>
+            <input type="text" class="form-control" value=" <?php echo($bebidas["valor"])?>" name="valor" id="inputFone">
+        </div>
+
+        <div class="col-md-8">
+            <label for="inputNome" class="form-label">descrição</label>
+            <input type="text" class="form-control" value=" <?php echo($bebidas["descricao"])?>" name="descricao" id="inputNome">
+        </div>
+        
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary"> alterar Bebida</button>
+        </div>
+        </form>
+    </div>   
  
  
 <?php

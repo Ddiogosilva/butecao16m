@@ -64,7 +64,7 @@ include_once("../model/bancoBebidas.php");
       
       <td> 
         <!-- botal da modal -->
-      <button type="button" $idProduto="<?php echo($bebidas["idProduto"]) ?>" nomeProduto="<?php echo($bebidas["nomeProduto"]) ?>" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deletarModal">
+      <button type="button" idProduto="<?php echo($bebidas["idProduto"]) ?>" nomeProduto="<?php echo($bebidas["nomeProduto"]) ?>" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deletarModal">
       Deletar
       </button>
       
@@ -95,8 +95,8 @@ include_once("../model/bancoBebidas.php");
         ...
       </div>
       <div class="modal-footer">
-        <form action="../controller/deletarContato.php" method="post">
-          <input type= "hidden" value= "" class= "idContato from-control" name= "idContato">
+        <form action="../controller/deletarbebida.php" method="post">
+          <input type= "hidden" value= "" class= "idProduto from-control" name= "idProduto">
           <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -111,15 +111,15 @@ include_once("../model/bancoBebidas.php");
       deletarProdutoModal.addEventListener('show.bs.modal' , function(event){ 
 
   let button = event.relatedTarget;
-  let idProduto = button.getAttribute ('idProduto');
+  let id_Produto = button.getAttribute ('idProduto');
   let nome_Produto = button.getAttribute('nomeProduto');
 
   let modalbody = deletarProdutoModal.querySelector('.modal-body');
-  modalbody.textContent = 'Deseja realmente excluir o Produto ' + nome_Produto + ' ' + idProduto + ' ?'
+  modalbody.textContent = 'Deseja realmente excluir o Produto ' + nome_Produto + ' ' + id_Produto + ' ?'
 
   let IDProduto = deletarProdutoModal.querySelector('.modal-footer .idProduto');
-  IDProduto.value = idProduto;
-       })
+  IDProduto.value = idProduto; 
+  })
 </script>
 
 <?php
