@@ -118,7 +118,7 @@ include_once("../model/bancoBebidas.php");
   modalbody.textContent = 'Deseja realmente excluir o Produto ' + nome_Produto + ' ' + id_Produto + ' ?'
 
   let IDProduto = deletarProdutoModal.querySelector('.modal-footer .idProduto');
-  IDProduto.value = idProduto; 
+  IDProduto.value = id_Produto; 
   })
 </script>
 
